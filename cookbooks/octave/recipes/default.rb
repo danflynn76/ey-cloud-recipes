@@ -20,7 +20,6 @@ if ['app_master', 'app', 'solo'].include?(node[:instance_role])
   remote_file "#{Chef::Config[:file_cache_path]}/octave-3.8.1.tar.gz" do
     source "http://ftp.gnu.org/gnu/octave/octave-3.8.1.tar.gz"
     mode '0644'
-    ftp_active_mode true
     notifies :run, "bash[install_octave]", :immediately
   end
 
