@@ -27,6 +27,7 @@ if ['app_master', 'app', 'solo'].include?(node[:instance_role])
 
   bash 'install_octave' do
     user "root"
+    timeout 28800
     cwd Chef::Config[:file_cache_path]
     code <<-EOH
       tar -zxf octave-3.8.1.tar.gz
